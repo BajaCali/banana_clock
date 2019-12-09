@@ -13,6 +13,7 @@ import 'package:intl/intl.dart';
 import 'widgets/minute_hand.dart';
 import 'widgets/hour_hand.dart';
 import 'widgets/rotating_apple.dart';
+import 'widgets/weather.dart';
 
 class AnalogClock extends StatefulWidget {
   const AnalogClock(this.model);
@@ -126,6 +127,7 @@ class _AnalogClockState extends State<AnalogClock> {
         color: customTheme.backgroundColor,
         child: Stack(
           children: [
+            Weather(),
             RotatingApple(),
             HourHand(_now),
             MinuteHand(_now),

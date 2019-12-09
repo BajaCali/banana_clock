@@ -6,10 +6,10 @@ import '../models/loop_controller.dart';
 
 class RotatingApple extends StatefulWidget {
   @override
-  State createState() => rotatingAppleState();
+  State createState() => _RotatingAppleState();
 }
 
-class rotatingAppleState extends State<RotatingApple> {
+class _RotatingAppleState extends State<RotatingApple> {
   @override
   Widget build(BuildContext context) {
     return SizedBox.expand(
