@@ -12,7 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:vector_math/vector_math_64.dart' show radians;
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'models/container_hand.dart';
+import 'models/hand.dart';
 import 'strings.dart';
 
 /// Total distance traveled by a second or a minute hand, each second or minute,
@@ -147,8 +147,7 @@ class _AnalogClockState extends State<AnalogClock> {
   }
 
   Widget _minuteHand() {
-    return ContainerHand(
-      size: 0.95,
+    return Hand(
       angleRadians: _now.minute * radiansPerTick,
       child: SvgPicture.asset(
         hands.minute,
@@ -157,8 +156,7 @@ class _AnalogClockState extends State<AnalogClock> {
   }
 
   Widget _hourHand() {
-    return ContainerHand(
-      size: 0.95,
+    return Hand(
       angleRadians:
           _now.hour * radiansPerHour + (_now.minute / 60) * radiansPerHour,
       child: SvgPicture.asset(
