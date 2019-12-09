@@ -7,24 +7,11 @@ import 'dart:async';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:vector_math/vector_math_64.dart' show radians;
-import 'package:flutter_svg/flutter_svg.dart';
 
-import 'models/hand.dart';
-import 'strings.dart';
+import 'widgets/minute_hand.dart';
+import 'widgets/hour_hand.dart';
 
-/// Total distance traveled by a second or a minute hand, each second or minute,
-/// respectively.
-final radiansPerTick = radians(360 / 60);
-
-/// Total distance traveled by an hour hand, each hour, in radians.
-final radiansPerHour = radians(360 / 12);
-
-/// A basic analog clock.
-///
-/// You can do better than this!
 class AnalogClock extends StatefulWidget {
   const AnalogClock(this.model);
 
@@ -137,30 +124,11 @@ class _AnalogClockState extends State<AnalogClock> {
         color: customTheme.backgroundColor,
         child: Stack(
           children: [
-            _hourHand(),
-            _minuteHand(),
+            HourHand(_now),
+            MinuteHand(_now),
             _weather(weatherInfo),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _minuteHand() {
-    return Hand(
-      angleRadians: _now.minute * radiansPerTick,
-      child: SvgPicture.asset(
-        hands.minute,
-      ),
-    );
-  }
-
-  Widget _hourHand() {
-    return Hand(
-      angleRadians:
-          _now.hour * radiansPerHour + (_now.minute / 60) * radiansPerHour,
-      child: SvgPicture.asset(
-        hands.hour,
       ),
     );
   }
