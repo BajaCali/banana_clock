@@ -127,11 +127,11 @@ class _AnalogClockState extends State<AnalogClock> {
         color: customTheme.backgroundColor,
         child: Stack(
           children: [
-            Weather(condition: _condition),
+            Weather(_condition),
             RotatingApple(),
-            HourHand(_now),
             MinuteHand(_now),
-            _weather(weatherInfo),
+            HourHand(_now),
+            // _weather(weatherInfo),
           ],
         ),
       ),
