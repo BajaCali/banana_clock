@@ -13,10 +13,6 @@ class Weather extends StatelessWidget {
         'assets/weather/$condition.flr',
         animation: 'go',
       ),
-      // FlareActor(
-      //   'assets/weather/$condition.flr',
-      //   controller: _durations[condition],
-      // ),
     );
   }
 }

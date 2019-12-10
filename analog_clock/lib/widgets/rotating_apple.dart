@@ -13,8 +13,8 @@ class _RotatingAppleState extends State<RotatingApple> {
     return SizedBox.expand(
       child: FlareActor(
         'assets/hands/apple.flr',
-        alignment: Alignment.center,
-        fit: BoxFit.contain,
+        // alignment: Alignment.center,
+        // fit: BoxFit.contain,
         animation: 'go',
       ),
     );
