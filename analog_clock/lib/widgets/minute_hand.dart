@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:vector_math/vector_math_64.dart' show radians;
 
 import 'package:analog_clock/models/hand.dart';
@@ -12,8 +11,6 @@ final radiansPerTick = radians(360 / 60);
 Widget MinuteHand(DateTime now) {
   return Hand(
     angleRadians: now.minute * radiansPerTick,
-    child: SvgPicture.asset(
-      hands.minute,
-    ),
+    child: Image.asset(hands.minute),
   );
 }
