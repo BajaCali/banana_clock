@@ -89,34 +89,16 @@ class _AnalogClockState extends State<AnalogClock> {
     //    [DigitalClock].
     final customTheme = Theme.of(context).brightness == Brightness.light
         ? Theme.of(context).copyWith(
-            // Hour hand.
-            primaryColor: Color(0xFF4285F4),
-            // Minute hand.
-            highlightColor: Color(0xFF8AB4F8),
-            // Second hand.
-            accentColor: Color(0xFF669DF6),
+            // Overlay color.
+            highlightColor: Color(0x00000000),
             backgroundColor: Color(0xFFD2E3FC),
           )
         : Theme.of(context).copyWith(
-            primaryColor: Color(0xFFD2E3FC),
-            highlightColor: Color(0xFF4285F4),
-            accentColor: Color(0xFF8AB4F8),
-            backgroundColor: Color(0xFF3C4043),
+            highlightColor: Color(0x80000000),
+            backgroundColor: Color(0xFF125e96),
           );
 
     final time = DateFormat.Hms().format(DateTime.now());
-    final weatherInfo = DefaultTextStyle(
-      style: TextStyle(color: customTheme.primaryColor),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(_temperature),
-          Text(_temperatureRange),
-          Text(_condition),
-          Text(_location),
-        ],
-      ),
-    );
 
     return Semantics.fromProperties(
       properties: SemanticsProperties(
@@ -131,20 +113,18 @@ class _AnalogClockState extends State<AnalogClock> {
             RotatingApple(),
             MinuteHand(_now),
             HourHand(_now),
-            // _weather(weatherInfo),
+            _darkMode(customTheme.highlightColor),
           ],
         ),
       ),
     );
   }
 
-  Widget _weather(Widget info) {
-    return Positioned(
-      left: 0,
-      bottom: 0,
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: info,
+  Widget _darkMode(Color color) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        border: Border.all(width: 0, color: color),
       ),
     );
   }
