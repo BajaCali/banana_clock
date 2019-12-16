@@ -41,6 +41,7 @@ class Date extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(0, 5, 20, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               months[_now.month - 1] + ' ' + _now.day.toString(),

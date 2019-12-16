@@ -6,6 +6,7 @@ import 'dart:async';
 
 import 'package:analog_clock/widgets/date.dart';
 import 'package:analog_clock/widgets/rotating_apple.dart';
+import 'package:analog_clock/widgets/weather_info.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
@@ -111,11 +112,12 @@ class _AnalogClockState extends State<AnalogClock> {
         child: Stack(
           children: [
             Weather(_condition),
+            Date(_now),
+            WeatherInfo(_temperatureRange, _temperature, _location),
             RotatingApple(),
             MinuteHand(_now),
             HourHand(_now),
             _darkMode(customTheme.highlightColor),
-            Date(_now),
           ],
         ),
       ),
