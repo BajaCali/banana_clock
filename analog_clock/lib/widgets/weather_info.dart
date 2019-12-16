@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle _style = GoogleFonts.pacifico(fontSize: 80);
+TextStyle _shadow =
+    TextStyle(shadows: [Shadow(blurRadius: 1.5, color: Colors.black)]);
 
 class WeatherInfo extends StatelessWidget {
   String _tempRange;
@@ -28,15 +30,24 @@ class WeatherInfo extends StatelessWidget {
             children: <Widget>[
               Text(
                 _temp,
-                style: GoogleFonts.pacifico(fontSize: 80),
+                style: GoogleFonts.pacifico(
+                  fontSize: 80,
+                  textStyle: _shadow,
+                ),
               ),
               Text(
                 _tempRange,
-                style: GoogleFonts.pacifico(fontSize: 60),
+                style: GoogleFonts.pacifico(
+                  fontSize: 40,
+                  textStyle: _shadow,
+                ),
               ),
               Text(
                 _location,
-                style: GoogleFonts.pacifico(fontSize: 40),
+                style: GoogleFonts.pacifico(
+                  fontSize: 40,
+                  textStyle: _shadow,
+                ),
               ),
             ],
           ),

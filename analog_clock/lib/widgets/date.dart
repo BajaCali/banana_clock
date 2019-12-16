@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-TextStyle _style = GoogleFonts.pacifico(fontSize: 80);
+TextStyle _style = GoogleFonts.pacifico(
+  fontSize: 80,
+  textStyle: TextStyle(shadows: [Shadow(blurRadius: 1.5, color: Colors.black)]),
+);
 
 List days = [
   'Mon',
