@@ -6,7 +6,7 @@ List days = [
   'Tuesday',
   'Wednesday',
   'Thursday',
-  'Wednesday',
+  'Friday',
   'Saturday',
   'Sunday',
 ];
