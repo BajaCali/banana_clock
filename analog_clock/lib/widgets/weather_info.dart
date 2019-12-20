@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-TextStyle _style = GoogleFonts.pacifico(fontSize: 80);
-TextStyle _shadow =
-    TextStyle(shadows: [Shadow(blurRadius: 1.5, color: Colors.black)]);
+import 'package:analog_clock/constans.dart';
 
 class WeatherInfo extends StatelessWidget {
   String _tempRange;
@@ -19,6 +15,11 @@ class WeatherInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _size = MediaQuery.of(context).size;
+    double _textSize = ((_size.width / _size.height > 5 / 3))
+        ? _size.height / 3 * 0.1
+        : _size.width / 5 * 0.1;
+    _textSize = _textSize * fontScale;
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(
@@ -30,24 +31,15 @@ class WeatherInfo extends StatelessWidget {
             children: <Widget>[
               Text(
                 _temp,
-                style: GoogleFonts.pacifico(
-                  fontSize: 80,
-                  textStyle: _shadow,
-                ),
+                style: fontStyle(_textSize * 2),
               ),
               Text(
                 _tempRange,
-                style: GoogleFonts.pacifico(
-                  fontSize: 40,
-                  textStyle: _shadow,
-                ),
+                style: fontStyle(_textSize),
               ),
               Text(
                 _location,
-                style: GoogleFonts.pacifico(
-                  fontSize: 40,
-                  textStyle: _shadow,
-                ),
+                style: fontStyle(_textSize),
               ),
             ],
           ),
