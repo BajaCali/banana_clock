@@ -5,16 +5,16 @@
 import 'dart:async';
 
 import 'package:analog_clock/widgets/date.dart';
-import 'package:analog_clock/widgets/rotating_apple.dart';
+import 'package:analog_clock/widgets/second_hand.dart';
 import 'package:analog_clock/widgets/weather_info.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:intl/intl.dart';
 
+import 'widgets/second_hand.dart';
 import 'widgets/minute_hand.dart';
 import 'widgets/hour_hand.dart';
-import 'widgets/rotating_apple.dart';
 import 'widgets/weather.dart';
 
 class AnalogClock extends StatefulWidget {
@@ -74,7 +74,8 @@ class _AnalogClockState extends State<AnalogClock> {
       // Update once per second. Make sure to do it at the beginning of each
       // new second, so that the clock is accurate.
       _timer = Timer(
-        Duration(seconds: 1) - Duration(milliseconds: _now.millisecond),
+        Duration(
+            milliseconds: 1), // - Duration(milliseconds: _now.millisecond),
         _updateTime,
       );
     });
@@ -114,7 +115,8 @@ class _AnalogClockState extends State<AnalogClock> {
             Weather(_condition),
             Date(_now),
             WeatherInfo(_temperatureRange, _temperature, _location),
-            RotatingApple(),
+            // RotatingApple(),
+            SecondHand(_now),
             MinuteHand(_now),
             HourHand(_now),
             _darkMode(customTheme.highlightColor),
