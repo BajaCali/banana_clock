@@ -10,8 +10,8 @@ final radiansPerTick = radians(360 / 60);
 
 Widget MinuteHand(DateTime now) {
   return Hand(
-    offset: -0.3,
-    scale: 0.6,
+    offset: -0.32,
+    scale: 0.59,
     angleRadians: now.minute * radiansPerTick,
     child: Image.asset(Hands.minute),
   );
