@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+import 'package:analog_clock/constans.dart';
 import 'package:analog_clock/widgets/date.dart';
 import 'package:analog_clock/widgets/second_hand.dart';
 import 'package:analog_clock/widgets/weather_info.dart';
@@ -102,6 +103,11 @@ class _AnalogClockState extends State<AnalogClock> {
           );
 
     final time = DateFormat.Hms().format(DateTime.now());
+
+    var _size = MediaQuery.of(context).size;
+    unit = ((_size.width / _size.height > 5 / 3))
+        ? _size.height / 3
+        : _size.width / 5;
 
     return Semantics.fromProperties(
       properties: SemanticsProperties(

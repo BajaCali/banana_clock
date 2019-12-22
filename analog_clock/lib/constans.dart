@@ -8,7 +8,7 @@ class Hands {
 }
 
 const _fontWeight = FontWeight.w300;
-const fontScale = 2;
+const fontScale = 0.2;
 
 TextStyle fontStyle(double size) {
   return GoogleFonts.montserrat(
@@ -21,3 +21,5 @@ TextStyle fontStyle(double size) {
     fontWeight: _fontWeight,
   );
 }
+
+double unit;

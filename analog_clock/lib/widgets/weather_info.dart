@@ -15,11 +15,7 @@ class WeatherInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _size = MediaQuery.of(context).size;
-    double _textSize = ((_size.width / _size.height > 5 / 3))
-        ? _size.height / 3 * 0.1
-        : _size.width / 5 * 0.1;
-    _textSize = _textSize * fontScale;
+    var _textSize = unit * fontScale;
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(
@@ -48,3 +44,5 @@ class WeatherInfo extends StatelessWidget {
     );
   }
 }
+
+class _textSize {}

@@ -9,8 +9,8 @@ final radiansPerHour = radians(360 / 12);
 
 Widget HourHand(DateTime now) {
   return Hand(
-      offset: -50,
-      scale: 0.7,
+      offset: -0.45,
+      scale: 0.25,
       angleRadians:
           now.hour * radiansPerHour + (now.minute / 60) * radiansPerHour,
       child: Image.asset(Hands.hour));

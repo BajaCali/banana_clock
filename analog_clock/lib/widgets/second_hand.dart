@@ -14,5 +14,6 @@ Widget SecondHand(DateTime now) {
     angleRadians:
         now.second * radiansPerSecond + now.millisecond * radiansPerMilisecond,
     child: Image.asset(Hands.second),
+    scale: 1.05,
   );
 }
