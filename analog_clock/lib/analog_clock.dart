@@ -75,7 +75,7 @@ class _AnalogClockState extends State<AnalogClock> {
       // new second, so that the clock is accurate.
       _timer = Timer(
         Duration(
-            milliseconds: 1), // - Duration(milliseconds: _now.millisecond),
+            milliseconds: 10), // - Duration(milliseconds: _now.millisecond),
         _updateTime,
       );
     });
