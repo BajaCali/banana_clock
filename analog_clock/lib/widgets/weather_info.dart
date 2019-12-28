@@ -15,7 +15,7 @@ class WeatherInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _textSize = unit * fontScale;
+    var _textSize = ClockSize.unit * fontScale;
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(

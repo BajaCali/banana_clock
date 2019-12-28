@@ -105,7 +105,7 @@ class _AnalogClockState extends State<AnalogClock> {
     final time = DateFormat.Hms().format(DateTime.now());
 
     var _size = MediaQuery.of(context).size;
-    unit = ((_size.width / _size.height > 5 / 3))
+    ClockSize.unit = ((_size.width / _size.height > 5 / 3))
         ? _size.height / 3
         : _size.width / 5;
 

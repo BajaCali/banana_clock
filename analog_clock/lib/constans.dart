@@ -22,4 +22,8 @@ TextStyle fontStyle(double size) {
   );
 }
 
-double unit;
+class ClockSize {
+  static double unit;
+  static double get width => 5 * unit;
+  static double get height => 3 * unit;
+}

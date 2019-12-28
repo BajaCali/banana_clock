@@ -32,7 +32,7 @@ class Hand extends StatelessWidget {
           angle: _angleRadians,
           alignment: Alignment.center,
           child: Transform.translate(
-            offset: Offset(0, _offset * unit * 3 / 2),
+            offset: Offset(0, _offset * ClockSize.unit * 3 / 2),
             child: Transform.scale(
               scale: (_scale != null) ? _scale : _defaultScale,
               alignment: Alignment.center,
