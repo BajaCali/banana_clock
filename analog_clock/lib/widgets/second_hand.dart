@@ -6,13 +6,11 @@ import 'package:analog_clock/constans.dart';
 
 /// Total distance traveled by a second or a minute hand, each second or minute,
 /// respectively.
-final radiansPerMilisecond = radians(360 / 60000);
 final radiansPerSecond = radians(360 / 60);
 
-Widget SecondHand(DateTime now) {
+Widget secondHand(DateTime now) {
   return Hand(
-    angleRadians:
-        now.second * radiansPerSecond + now.millisecond * radiansPerMilisecond,
+    angleRadians: (now.second + (now.millisecond / 1000)) * radiansPerSecond,
     child: Image.asset(Hands.second),
     scale: 1.05,
   );

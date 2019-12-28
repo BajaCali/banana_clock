@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../constans.dart';
 
 class Weather extends StatefulWidget {
-  String condition;
+  final String condition;
 
   Weather(this.condition);
 

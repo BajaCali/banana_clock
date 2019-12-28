@@ -8,11 +8,12 @@ import 'package:analog_clock/constans.dart';
 /// respectively.
 final radiansPerTick = radians(360 / 60);
 
-Widget MinuteHand(DateTime now) {
+Widget minuteHand(DateTime now) {
   return Hand(
     offset: -0.32,
     scale: 0.59,
-    angleRadians: now.minute * radiansPerTick,
+    angleRadians: (now.minute + (now.second / 60) + (now.millisecond / 60000)) *
+        radiansPerTick,
     child: Image.asset(Hands.minute),
   );
 }

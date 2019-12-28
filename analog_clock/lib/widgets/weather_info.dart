@@ -44,5 +44,3 @@ class WeatherInfo extends StatelessWidget {
     );
   }
 }
-
-class _textSize {}
