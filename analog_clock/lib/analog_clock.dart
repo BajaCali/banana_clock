@@ -119,8 +119,8 @@ class _AnalogClockState extends State<AnalogClock> {
         child: Stack(
           children: [
             Weather(_condition),
-            Date(_now),
-            WeatherInfo(_temperatureRange, _temperature, _location),
+            date(_now),
+            weatherInfo(_temperatureRange, _temperature, _location),
             // RotatingApple(),
             secondHand(_now),
             minuteHand(_now),
