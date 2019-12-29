@@ -72,11 +72,10 @@ class _AnalogClockState extends State<AnalogClock> {
   void _updateTime() {
     setState(() {
       _now = DateTime.now();
-      // Update once per second. Make sure to do it at the beginning of each
-      // new second, so that the clock is accurate.
+      // Update once per 10 milliseconds. Make sure to do it at the beginning
+      //  of each new 10th millisecond, so that the clock is accurate.
       _timer = Timer(
-        Duration(
-            milliseconds: 10), // - Duration(milliseconds: _now.millisecond),
+        Duration(milliseconds: 10),
         _updateTime,
       );
     });
