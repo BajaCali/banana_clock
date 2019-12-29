@@ -9,14 +9,13 @@ class Hands {
 
 const _fontWeight = FontWeight.w300;
 const fontScale = 0.2;
+Color fontColor;
 
 TextStyle fontStyle(double size) {
   return GoogleFonts.montserrat(
     fontSize: size,
     textStyle: TextStyle(
-      shadows: [
-        Shadow(blurRadius: 1.5, color: Colors.black),
-      ],
+      color: fontColor,
     ),
     fontWeight: _fontWeight,
   );

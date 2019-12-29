@@ -17,6 +17,7 @@ import 'widgets/second_hand.dart';
 import 'widgets/minute_hand.dart';
 import 'widgets/hour_hand.dart';
 import 'widgets/weather.dart';
+import 'constans.dart';
 
 class AnalogClock extends StatefulWidget {
   const AnalogClock(this.model);
@@ -100,6 +101,10 @@ class _AnalogClockState extends State<AnalogClock> {
             highlightColor: Color(0x80000000),
             backgroundColor: Color(0xFF125e96),
           );
+
+    fontColor = Theme.of(context).brightness == Brightness.light
+        ? Colors.black
+        : Color(0xFFBBBBBB);
 
     final time = DateFormat.Hms().format(DateTime.now());
 
