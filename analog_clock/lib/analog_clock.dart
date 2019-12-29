@@ -93,7 +93,7 @@ class _AnalogClockState extends State<AnalogClock> {
     //    [DigitalClock].
     final customTheme = Theme.of(context).brightness == Brightness.light
         ? Theme.of(context).copyWith(
-            // Overlay color.
+            // Overlay color for dark theme.
             highlightColor: Color(0x00000000),
             backgroundColor: Color(0xFFD2E3FC),
           )
@@ -104,6 +104,8 @@ class _AnalogClockState extends State<AnalogClock> {
 
     final time = DateFormat.Hms().format(DateTime.now());
 
+    // Calculate one "unit" for scaling. It uses knowlange
+    // of aspect ration, which is 5/3.
     var _size = MediaQuery.of(context).size;
     ClockSize.unit = ((_size.width / _size.height > 5 / 3))
         ? _size.height / 3
@@ -114,30 +116,31 @@ class _AnalogClockState extends State<AnalogClock> {
         label: 'Analog clock with time $time',
         value: time,
       ),
-      child: Container(
+      child: AnimatedContainer(
         color: customTheme.backgroundColor,
         child: Stack(
           children: [
             Weather(_condition),
             date(_now),
             weatherInfo(_temperatureRange, _temperature, _location),
-            // RotatingApple(),
             secondHand(_now),
             minuteHand(_now),
             hourHand(_now),
             _darkMode(customTheme.highlightColor),
           ],
         ),
+        duration: Duration(milliseconds: 200),
       ),
     );
   }
 
   Widget _darkMode(Color color) {
-    return Container(
+    return AnimatedContainer(
       decoration: BoxDecoration(
         color: color,
         border: Border.all(width: 0, color: color),
       ),
+      duration: Duration(milliseconds: 200),
     );
   }
 }
