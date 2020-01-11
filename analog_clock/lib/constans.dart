@@ -16,6 +16,11 @@ TextStyle fontStyle(double size) {
     fontSize: size,
     textStyle: TextStyle(
       color: fontColor,
+      shadows: [
+        Shadow(
+          blurRadius: 1.5,
+        ),
+      ],
     ),
     fontWeight: _fontWeight,
   );
