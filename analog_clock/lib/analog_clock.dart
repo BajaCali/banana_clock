@@ -7,7 +7,9 @@ import 'dart:async';
 import 'package:analog_clock/constans.dart';
 import 'package:analog_clock/widgets/date.dart';
 import 'package:analog_clock/widgets/second_hand.dart';
+import 'package:analog_clock/widgets/thundersotrm.dart';
 import 'package:analog_clock/widgets/weather_info.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
@@ -130,6 +132,7 @@ class _AnalogClockState extends State<AnalogClock> {
             secondHand(_now),
             minuteHand(_now),
             hourHand(_now),
+            _condition == 'thunderstorm' ? Thunderstorm() : Container(),
             _darkMode(customTheme.highlightColor),
           ],
         ),
