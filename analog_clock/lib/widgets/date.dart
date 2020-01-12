@@ -27,7 +27,6 @@ List months = [
 ];
 
 Widget date(DateTime now) {
-  var _textSize = ClockSize.unit * fontScale;
   return Align(
     alignment: Alignment.topRight,
     child: Padding(
@@ -38,11 +37,11 @@ Widget date(DateTime now) {
         children: [
           Text(
             months[now.month - 1] + ' ' + now.day.toString(),
-            style: fontStyle(_textSize),
+            style: fontStyle(ClockSize.textSize),
           ),
           Text(
             days[now.weekday - 1],
-            style: fontStyle(_textSize),
+            style: fontStyle(ClockSize.textSize),
           ),
         ],
       ),

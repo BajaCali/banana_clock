@@ -177,8 +177,6 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
       child: AspectRatio(
         aspectRatio: 5 / 3,
         child: Container(
-          // width: 800,
-          // height: 480,
           decoration: BoxDecoration(
             border: Border.all(
               width: 2,
