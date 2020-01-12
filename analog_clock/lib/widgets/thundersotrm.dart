@@ -43,6 +43,7 @@ class _ThunderstormState extends State<Thunderstorm>
   @override
   void dispose() {
     _timer?.cancel();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -118,8 +119,9 @@ class _LightingState extends State<_Lighting>
 
   @override
   void dispose() {
+    _timer?.cancel();
+    _controller.dispose();
     super.dispose();
-    _timer.cancel();
   }
 
   @override
