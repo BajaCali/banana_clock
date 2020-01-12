@@ -9,7 +9,7 @@ Widget weatherInfo(
   return Align(
     alignment: Alignment.bottomLeft,
     child: Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
+      padding: EdgeInsets.fromLTRB(ClockSize.sidePadding, 0, 0, 0),
       child: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

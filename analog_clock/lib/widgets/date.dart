@@ -31,7 +31,7 @@ Widget date(DateTime now) {
   return Align(
     alignment: Alignment.topRight,
     child: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 5, 20, 0),
+      padding: EdgeInsets.fromLTRB(0, 0, ClockSize.sidePadding, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,

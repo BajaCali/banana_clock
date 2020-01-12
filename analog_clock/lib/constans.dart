@@ -30,4 +30,5 @@ class ClockSize {
   static double unit;
   static double get width => 5 * unit;
   static double get height => 3 * unit;
+  static double get sidePadding => 0.05 * unit;
 }
