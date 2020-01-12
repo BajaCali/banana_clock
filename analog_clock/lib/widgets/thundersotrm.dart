@@ -58,7 +58,7 @@ class _ThunderstormState extends State<Thunderstorm>
     });
     _left = rand.nextDouble();
     _timer = Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 3 + rand.nextInt(27)),
       _setLightning,
     );
   }
