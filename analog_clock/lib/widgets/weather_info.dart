@@ -4,6 +4,7 @@ import 'package:analog_clock/constans.dart';
 Widget weatherInfo(
     String temperatureRange, String actualTemperature, String actualLocation) {
   temperatureRange = temperatureRange.replaceAll(RegExp(r'(\.\d)|\(|\)'), "");
+  temperatureRange = temperatureRange.replaceAll(RegExp(r' \- '), "\/");
   actualTemperature = actualTemperature.replaceAll(RegExp(r'\.\d'), "");
 
   return Align(
