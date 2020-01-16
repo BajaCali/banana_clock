@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
-import '../constans.dart';
+import 'package:analog_clock/constans.dart';
 
 class Weather extends StatefulWidget {
   final String condition;
