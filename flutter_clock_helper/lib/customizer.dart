@@ -51,7 +51,12 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
   void initState() {
     super.initState();
     _model.addListener(_handleModelChange);
-    _updateWeather();
+    _model.temperature = _temperatures[0];
+    _model.weatherCondition = WeatherCondition.values[0];
+    _timer = Timer(
+      Duration(seconds: 5),
+      _updateWeather,
+    );
   }
 
   @override
