@@ -3,8 +3,11 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 import 'model.dart';
+
+List<int> _temperatures = [13, 13, 13, 13, -3, 15, 27];
 
 /// Returns a clock [Widget] with [ClockModel].
 ///
@@ -41,11 +44,14 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
   final _model = ClockModel();
   ThemeMode _themeMode = ThemeMode.light;
   bool _configButtonShown = false;
+  var _condCnt = 0;
+  Timer _timer;
 
   @override
   void initState() {
     super.initState();
     _model.addListener(_handleModelChange);
+    _updateWeather();
   }
 
   @override
@@ -53,6 +59,15 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
     _model.removeListener(_handleModelChange);
     _model.dispose();
     super.dispose();
+  }
+
+  void _updateWeather() {
+    _model.weatherCondition = WeatherCondition.values[_condCnt++ % 7];
+    _model.temperature = _temperatures[_condCnt % 7];
+    _timer = Timer(
+      Duration(seconds: 4),
+      _updateWeather,
+    );
   }
 
   void _handleModelChange() => setState(() {});
@@ -201,7 +216,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
             behavior: HitTestBehavior.opaque,
             onTap: () {
               setState(() {
-                _configButtonShown = !_configButtonShown;
+                // _configButtonShown = !_configButtonShown;
               });
             },
             child: Stack(
