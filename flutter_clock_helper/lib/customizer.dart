@@ -53,6 +53,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
     _model.addListener(_handleModelChange);
     _model.temperature = _temperatures[0];
     _model.weatherCondition = WeatherCondition.values[0];
+    _model.location = 'Brno, CZ';
     _timer = Timer(
       Duration(seconds: 5),
       _updateWeather,
