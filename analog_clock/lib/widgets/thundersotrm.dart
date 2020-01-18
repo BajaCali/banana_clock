@@ -35,7 +35,7 @@ class _ThunderstormState extends State<Thunderstorm>
     _controller.forward(from: 1);
     _left = rand.nextDouble();
     _timer = Timer(
-      Duration(milliseconds: 1000 + rand.nextInt(2000)),
+      Duration(milliseconds: 1000),
       _setLightning,
     );
   }
