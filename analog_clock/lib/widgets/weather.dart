@@ -34,6 +34,26 @@ class _WeatherState extends State<Weather> {
       duration: Duration(seconds: 2),
       crossFadeState:
           _isAOn ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      layoutBuilder: (topChild, topChildKey, bottomChild, bottomChildKey) {
+        return Stack(
+          overflow: Overflow.visible,
+          alignment: Alignment.center,
+          children: <Widget>[
+            Positioned(
+              key: bottomChildKey,
+              top: 0,
+              left: 0,
+              child: bottomChild,
+            ),
+            Positioned(
+              key: topChildKey,
+              top: 0,
+              left: 0,
+              child: topChild,
+            )
+          ],
+        );
+      },
     );
   }
 
