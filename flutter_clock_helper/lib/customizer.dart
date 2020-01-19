@@ -44,7 +44,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
   final _model = ClockModel();
   ThemeMode _themeMode = ThemeMode.light;
   bool _configButtonShown = false;
-  var _condCnt = 0;
+  var _condCnt = 6;
   Timer _timer;
 
   @override
@@ -52,7 +52,7 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
     super.initState();
     _model.addListener(_handleModelChange);
     _model.temperature = _temperatures[0];
-    _model.weatherCondition = WeatherCondition.values[0];
+    _model.weatherCondition = WeatherCondition.values[6];
     _model.location = 'Brno, CZ';
     _timer = Timer(
       Duration(seconds: 5),
